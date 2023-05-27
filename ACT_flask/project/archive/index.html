@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preload" href="../static/images/helpful_logo_1.png" />
+      <script rel=preload src="../static/js/jquery3-5-1.js"></script>
+      <script rel=preload src="../static/js/chart.js"></script>
+      <link rel='stylesheet' id='style-css'  href='../static/css/style6fd2.css' type='text/css' media='all' />
+      <link rel="shortcut icon" href="../static/images/helpful_logo_1.png" />
+   </head>
+
+<body class="">
+	<div class="preloader" >
+    <div class="preloader__inner" >
+        <div class="preloader__logo" >
+                              <video muted playsinline autoplay loop style="width:15%">
+                        <source src="../static/images/public_homepage/active_loader.mp4" type="video/mp4">
+                </video>
+        </div>
+    </div>
+</div>
+
+			<div id="container">
+		<div class="preloadContainer hasPreload">
+
+
+				<div class="topbar ">
+					<div class="content">
+						<div class="topbar__inner">
+														<a href="{{ url_for('MCA_Public_Homepage') }}" class="logo" title="Active MCA">
+                        <img src="../static/images/helpful_logo_dark.png" style="width:150px; height:auto; margin-top:-5%; margin-left:-17%"> </img>
+                        <p class=logo-text></p>
+                     </a>
+							<div class="tagline">We are Active MCA.<br> Others are Passive.</div>
+
+
+                            <a href="{{ url_for('MCA_Login.MCA_Login') }}" class="login_button"><span class="login_button_hov">Login</span></a>
+
+							<button class="menubtn" style="margin-top:-30px">
+								<span class="menubtn__title">Menu</span>
+								<div class="menubtn__icon">
+
+									<span class="icon-first"></span>
+									<span class="icon-second"></span>
+									<span class="icon-third"></span>
+								</div>
+							</button>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="drawer">
+					<div class="content">
+						<div class="drawer__container">
+							<div class="drawer__inner">
+
+								<div class="drawer__menu">
+	<nav class="menu-menu-container"><ul id="menu-menu" class="menu"><li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="../index.html">Home</a><sup></sup></li>
+	<li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_how_it_works') }}">How It Works</a><sup></sup></li>
+<li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_Security') }}">Security</a><sup></sup></li>
+                                 <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="{{ url_for('MCA_Public_Contact') }}">Contact</a><sup></sup></li>
+
+</ul></nav>
+
+								</div>
+								<div class="drawer__bottom">
+									<div class="drawer__contact">
+																				<h5>General contact</h5>
+
+										<a href="../">info@get-helpful.com</a>
+									</div>
+
+									<div class="drawer__language">
+
+																			</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<style>
+
+				.login_button{
+				    color:#fff;
+				    padding:.5px;
+    font-weight: 300;
+    grid-column: 11/12;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+    align-self: center;
+    font-size: 14px;
+    z-index:100;
+				}
+
+				.login_button_hov:hover{
+				    border-bottom: #fff .5px solid;
+				}
+
+				@media screen and (min-width:1200px) and (max-width:3000px) {
+					.home_vid_move{
+						width:45% !important;
+						height:auto !important;
+						margin-left:28% !important;
+						margin-top:5%!important
+					}
+				}
+				@media screen and (min-width:1020px) and (max-width:1200px) {
+					.home_vid_move{
+						width:50% !important;
+						height:auto !important;
+						margin-left:25% !important;
+						margin-top:7%!important
+
+					}
+				}
+				  @media screen and (min-width:871px) and (max-width:1019px) {
+						.home_vid_move{
+							width:60% !important;
+							height:auto !important;
+							margin-left:25% !important;
+							margin-top:16% !important
+						}
+					}
+					@media screen and (min-width:681px) and (max-width:870px) {
+						.home_vid_move{
+							width:65% !important;
+							height:auto !important;
+							margin-left:18% !important;
+							margin-top:28% !important
+						}
+					}
+					@media screen and (min-width:601px) and (max-width:680px) {
+						.home_vid_move{
+							width:70% !important;
+							height:auto !important;
+							margin-left:15% !important;
+							margin-top:43% !important
+						}
+					}
+					@media screen and (min-width:501px) and (max-width:600px) {
+						.home_vid_move{
+							width:80% !important;
+							height:auto !important;
+							margin-left:12% !important;
+							margin-top:48% !important
+						}
+					}
+					@media screen and (min-width:51px) and (max-width:500px) {
+						.home_vid_move{
+							width:80% !important;
+							height:auto !important;
+							margin-left:12% !important;
+							margin-top:73% !important
+						}
+					}
+
+					@media (min-width: 1025px) {
+					    .matter_width {
+					        width:130% !important;
+					    }}
+				</style>
+
+<div id="body" class="home">
+	<section id="intro" style="margin-bottom:-10%">
+				<div class="home__intro background--dark">
+			<div class="home__intro__video">
+				<video playsinline  muted loop autoplay class="home_vid_move">
+					<source src="../static/images/public_homepage/active_ball.mp4" type="video/mp4">
+				</video>
+
+				<div class="topGradient"></div>
+				<div class="bottomGradient"></div>
+				<div class="leftGradient"></div>
+			</div>
+			<div class="home__intro__blur"></div>
+			<div class="home__intro__overlay">
+				<div class="content">
+					<h1>
+						<span class="title">MCA Software</span>
+						<span class="subtitle">
+							Actively Growing.</span>
+					</h1>
+					<a href="{{ url_for('MCA_Login.MCA_Login') }}"><button class="btn__showreel" id="">Login</button></a>
+				</div>
+			</div>
+			<div class="scrollbar__container" data-start="scroll" data-halfway="almost there" data-finish="Welcome+">
+				<div class="scrollbar scrollbar--vertical">
+    <div class="scrollbar__bar">
+        <div class="scrollbar__empty"></div>
+        <div class="scrollbar__fill"></div>
+    </div>
+    <div class="scrollbar__text">scroll</div>
+</div>
+			</div>
+		</div>
+
+		<div class="home__fullvideo">
+			<div class="home__fullvideo__container">
+			</div>
+			<div class="content">
+				<button class="home__fullvideo__close">Close</button>
+			</div>
+		</div>
+						<div id="about" class="background--light home__about" style="margin-bottom:-10%">
+			<div class="content">
+				<div class="textcolumn">
+					<div class="textcolumn__title">
+						About us					</div>
+					<div class="textcolumn__text matter_width">
+						<h3>
+							<span class="subtitle">Active MCA</span> A premium Merchant Cash Advance (MCA) management software that is ACTIVE and responsive to your daily funding system.
+						</h3>
+												<a href="{{ url_for('MCA_how_it_works') }}" class="link">
+							Learn more</a>
+											</div>
+
+				</div>
+
+			</div>
+		</div>
+			</section>
+
+		<section id="projects" class=" selected-projects">
+		<div class="selected-projects__content">
+			<div class="selected-projects__sticky">
+				<div class="selected-projects__title background--light">
+					<div style="margin-left:10%; z-index:100" class="link">
+							Active MCA <br> Scroll the Overview Below for Details</div>
+
+
+
+
+				</div>
+									<div class="selected-projects__inner">
+						<div class="selected-projects__slider">
+															<a href="../invite/index.html" class="selected-projects__slide rightGradient" data-title="Made for MCA" data-subtitle="ActiveMCA is designed specifically for MCA. Now you can streamline your MCA business.">
+								<img width="2048" height="858" src="../#" class="attachment-full size-full lazyload" alt="" srcset="" sizes="(max-width: 2048px) 100vw, 2048px" data-src="../static/images/slider_1.jpg" />								<div class=rightGradient>
+								</div>
+							</a>
+															<a href="../invite/index.html" class="selected-projects__slide rightGradient" data-title="Active Analysis" data-subtitle="ActiveMCA offers proprietary fundability scores. We save you time by identifying the best deals for you. ">
+																	<img width="2048" height="858" src="../#" class="attachment-full size-full lazyload" alt="" srcset="" sizes="(max-width: 2048px) 100vw, 2048px" data-src="../static/images/slider_5.jpg" />								<div class=rightGradient>
+																</div>
+															</a>
+
+															<a href="../invite/index.html" class="selected-projects__slide rightGradient" data-title="The Apple of MCA" data-subtitle="We have optimized every aspect of the MCA process and presented it to you in a clean, sleek, beautiful interface. ">
+																<img width="2048" height="858" src="../#" class="attachment-full size-full lazyload" alt="" srcset="" sizes="(max-width: 2048px) 100vw, 2048px" data-src="../static/images/slider_3.jpg" />								<div class=rightGradient>
+																</div>
+															</a>
+
+													</div>
+						<div class="selected-projects__cursor">Learn More</div>
+						<div class="selected-projects__overlay">
+							<div class="selected-projects__overlay__inner">
+								<h3>
+									<div class="hiddenText">
+										<span class="title"></span>
+									</div>
+									<div class="hiddenText">
+										<span class="subtitle"></span>
+									</div>
+
+								</h3>
+								<div class="selected-projects__overlay__bottomContainer">
+									<div class="scrollbar">
+										<span>scroll</span>
+										<div class="scrollbar__bar">
+											<div class="scrollbar__empty"></div>
+											<div class="scrollbar__fill"></div>
+										</div>
+									</div>
+									<div class="selected-projects__bottom">
+										<div class="selected-projects__toggle"></div>
+										<div class="selected-projects__buttons">
+											<div class="arrow selected-projects__arrow--prev"></div>
+											<div class="arrow selected-projects__arrow--next"></div>
+										</div>
+									</div>
+									<div class="projectLength">
+										<div class="hiddenText">
+
+											<span class="currentProject"></span>
+										</div>
+										<span class="slash">/</span>
+										<span class="totalProject"></span>
+									</div>
+								</div>
+
+
+
+
+							</div>
+						</div>
+
+
+								</div>
+			</div>
+		</div>
+	</section>
+
+
+
+		<section id="flexible" class="flexible background--light">
+
+
+
+
+
+
+
+
+      <div class="two-column-textblock">
+      <div class="content two-column-textblock__grid">
+      <div class="two-column-textblock__grid__side-title">
+      <h6>Active MCA does what you need</h6>
+      </div>
+      <div class="two-column-textblock__grid__block">
+      <h3>Carefully Curated Modules for Every Step of Your Process </h3>
+      <p>Simple, Smooth, Secure, and Seamless <br><br>
+        Every step of the funding process is included and simplified when using ActiveMCA.<br>Explore what we offer below. </p>
+      </div>
+      <span class="two-column-textblock__grid__cross"></span>
+      </div>
+      </div>
+
+
+
+<style>
+
+.eye_cursor {
+    cursor:url("static/images/icons/eye.svg"), auto;
+}
+.eye_cursor_1 {
+    cursor:url("static/images/icons/eye_1.png"), auto;
+}
+
+</style>
+
+
+      <section class="cards-wrapper" style="margin-top:-5%">
+        <div class="card-grid-space">
+          <a class="card eye_cursor_1" href="{{ url_for('MCA_how_it_works') }}" style="float:left; --transition-time: .5s; --bg-img: url('static/images/public_homepage/public_homepage_3_1.png'); --bg-img_1: url('static/images/public_homepage/public_homepage_4.jpg'); --opcy:rgba(0, 0, 0, .3); --opcy_1:rgba(255, 255, 255, .5); --color:#fff; --color_1:#226ce3; --trans_origin: top left; --card_left: -60%; --card_top:-60%; --color_2:#ddd; --blur_it:9px; --blur_it_1:7px ">
+            <div class="date">One Click Simplicity</div>
+            <div class="frosted">
+              <p class="card_h">Fully Automated Intake</p>
+              <p class="card_p">ActiveMCA automatically handles full data entry and outputs a comprehensive analysis of all merchant bank statements ActiveMCA automatically handles full data entry and outputs a comprehensive analysis of all merchant bank statements
+              </p>
+              <div class="tags">
+                <div class="tag">CRM</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card eye_cursor" href="{{ url_for('MCA_how_it_works') }}" style="float:right; --transition-time: .4s; --bg-img: url('static/images/public_homepage/public_homepage_5_1.png'); --bg-img_1: url('static/images/public_homepage/public_homepage_6.jpg'); --opcy:rgba(255, 255, 255, .6);  --opcy_1:rgba(0,0,0, .2); --color:#226ce3; --color_1:#fff; --trans_origin: top right;  --card_left: -20%; --card_top:-50%; --color_2: #08409c; --blur_it:7px; --blur_it_1:7px ">
+            <div class="date">All Your Needs, Organized</div>
+            <div class="frosted">
+              <p class="card_h">Underwriting Made Easy</p>
+              <p class="card_p">Use our auto-decisioning ActiveMCA score or fully optimized and organized merchant data to analyze the deal. ActiveMCA will automatically import useful and relevant data from all the relevant sources throughout the underwriting process.</p>
+              <div class="tags">
+                <div class="tag">ActiveMCA Score</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card eye_cursor_1" href="{{ url_for('MCA_how_it_works') }}" style="float:left; --transition-time: .5s; --bg-img: url('static/images/public_homepage/public_homepage_6_1.png'); --bg-img_1: url('static/images/public_homepage/public_homepage_9_1.jpg'); --opcy:rgba(0, 0, 0, .3); --opcy_1:rgba(255, 255, 255, .1); --color:#fff; --color_1:#226ce3; --trans_origin: top left; --card_left: -60%; --card_top:-60%; --color_2:#ddd ; --blur_it:6px; --blur_it_1:4px ">
+            <div class="date">Streamline Deal Closings</div>
+            <div class="frosted">
+              <p class="card_h">Auto-fill E-sign Closing</p>
+              <p class="card_p">With Active MCA, both parties can sign the closing package and communicate directly. ActiveMCA adds convenience to the back and forth process.
+              </p>
+              <div class="tags">
+                <div class="tag">E-sign Easily</div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="card-grid-space">
+          <a class="card eye_cursor" href="{{ url_for('MCA_how_it_works') }}" style="float:right; --transition-time: .4s; --bg-img: url('static/images/public_homepage/public_homepage_11.png'); --bg-img_1: url('static/images/public_homepage/public_homepage_10.jpg'); --opcy:rgba(255, 255, 255, .6);  --opcy_1:rgba(0,0,0, .2); --color:#226ce3; --color_1:#fff; --trans_origin: top right;  --card_left: -20%; --card_top:-50%; --color_2: #08409c; --blur_it:5px; --blur_it_1:9px ">
+            <div class="date">Monitor the funding process at a glance</div>
+            <div class="frosted">
+              <p class="card_h">Funding Automation</p>
+              <p class="card_p">We've made it as easy as possible to manage the funding process with auto-drafted payments, fund tracking, syndicate accounting, and automated communication with the merchant.</p>
+              <div class="tags">
+                <div class="tag">Fund Simplicity</div>
+              </div>
+            </div>
+          </a>
+        </div>
+            </section>
+
+
+            <script>
+
+
+            </script>
+
+
+
+      <style>
+
+
+
+      .cards-wrapper {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-gap: 8rem;
+        padding: 4rem;
+        margin: 0 auto;
+        width:80%
+      }
+
+
+      .card {
+        --bg-filter-opacity: 0.5;
+        --bg-filter-opacity_1: 0.8;
+        background-image: var(--bg-img);
+        height: 15em;
+        width: 80%;
+        margin-left:2.5%;
+        font-size: 1.5em;
+        color: var(--color);
+        border-radius: 0;
+        padding: 2em;
+        /*margin: 2em;*/
+        display: flex;
+        align-items: flex-end;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 0 2em -1em black;
+        transition: all, var(--transition-time);
+        position: relative;
+        overflow: hidden;
+        border: 0px solid #ccc;
+        text-decoration: none;
+      }
+
+      .card:hover{
+        transform: rotate(0);
+        color: var(--color_1) !important;
+      }
+
+
+
+
+      .card .card_p{
+        font-size: 1em;
+        line-height: 1.25;
+        display: none;
+      }
+
+      .card:hover .card_p{
+        display:inline !important;
+      }
+
+      .card .card_h{
+        font-size: 2.5em;
+        line-height: 1.2em;
+        margin-bottom:2% !important
+      }
+
+      .frosted{
+        padding:20px;
+        backdrop-filter: saturate(180%) blur(var(--blur_it));
+        background: var(--opcy);
+        box-shadow: 0 0 1em -.5em black;
+      }
+
+      .card:hover .frosted{
+        background: var(--opcy_1) !important;
+        backdrop-filter: saturate(180%) blur(var(--blur_it_1));
+        transition-duration: var(--transition-time);
+      }
+
+
+
+      .card .tags {
+        display: flex;
+      }
+
+      .card .tags .tag {
+        font-size: 0.75em;
+        border-radius: 0.3rem;
+        padding: 0 0.5em;
+        margin-right: 0.5em;
+        line-height: 1.5em;
+        transition: all, var(--transition-time);
+        margin-top: 3% !important;
+        background: var(--color);
+        color: var(--color_1);
+      }
+
+      .card:hover .tags .tag {
+        background: var(--color_1);
+        color: var(--color);
+      }
+
+      .card .date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.75em;
+        padding: 1em;
+        line-height: 1em;
+      }
+
+      .card:before,
+      .card:after {
+        content: "";
+        transform: scale(0);
+        transform-origin: var(--trans_origin);
+        border-radius: 50%;
+        position: absolute;
+        left: -5%;
+        top: -5%;
+        z-index: -5;
+        transition: all, var(--transition-time);
+        transition-timing-function: ease-in-out;
+      }
+
+      .card:before {
+        background: var(--color_2);
+        width: 200%;
+        height: 200%;
+        left: var(--card_left);
+        top: var(--card_top);
+        transition: all, var(--transition-time);
+      }
+
+      .card:after {
+        background-image: var(--bg-img_1);
+        width: 110%;
+        height: 110%;
+        background-size: cover;
+        border-radius: 0%;
+      }
+
+
+      .card:hover:before,
+      .card:hover:after {
+        transform: scale(1);
+      }
+
+      .card-grid-space .num {
+        font-size: 3em;
+        margin-bottom: 1.2rem;
+        margin-left: 1rem;
+      }
+
+
+
+      /* MEDIA QUERIES */
+      @media screen and (max-width: 1285px) {
+        .cards-wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .cards-wrapper {
+          grid-template-columns: 1fr;
+        }
+        .card-grid-space .num {
+          /margin-left: 0;
+          /text-align: center;
+        }
+        .card .card_p{
+          font-size: .75em;
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .cards-wrapper {
+          padding: 4rem 2rem;
+        }
+        .card {
+          max-width: calc(100vw - 4rem);
+        }
+        .card .card_p{
+          font-size: .75em;
+        }
+      }
+
+
+
+
+
+
+
+      </style>
+
+
+					</section>
+
+
+
+	<section id="services" class="list background--dark">
+		<div class="content" style="margin-bottom:5%">
+			<div class="textcolumn">
+				<div class="textcolumn__title">
+				What We Do				</div>
+				<div class="textcolumn__text matter_width">
+					<h3>
+			Our Process and Features
+					</h3>
+
+										</div>
+			</div>
+		</div>
+	<div class="list__grid content">
+		<div class="list__grid__side-title">
+							<div style="margin-top:-25%" class="link">
+				Our Active System</div>
+						</div>
+					<a href="{{ url_for('MCA_how_it_works', _anchor='service-1') }}" class="list__grid__item">
+			<div class="list__grid__number">
+				<h6>01 - </h6>
+			</div>
+			<div class="list__grid__title">
+				<h3>CRM & Initial Underwriting</h3>
+				<p>A MCA focused CRM system to organize your extensive deal flow.</p>
+			</div>
+			<div class="arrow"></div>
+			<div class="list__grid__line"></div>
+		</a>
+    <a href="{{ url_for('MCA_how_it_works', _anchor='service-2') }}" class="list__grid__item">
+      <div class="list__grid__number">
+        <h6>03 - </h6>
+      </div>
+      <div class="list__grid__title">
+        <h3>Full Underwriting</h3>
+        <p>A suite of tailored integrations and automations to help you master the underwriting process.</p>
+      </div>
+      <div class="arrow"></div>
+      <div class="list__grid__line"></div>
+      </a>
+					<a href="{{ url_for('MCA_how_it_works', _anchor='service-3') }}" class="list__grid__item">
+			<div class="list__grid__number">
+				<h6>02 - </h6>
+			</div>
+			<div class="list__grid__title">
+				<h3>Terms & Contracts</h3>
+				<p>Cutting edge contract technology to streamline merchant onboarding.</p>
+			</div>
+			<div class="arrow"></div>
+			<div class="list__grid__line"></div>
+		</a>
+					<a href="{{ url_for('MCA_how_it_works', _anchor='service-4') }}" class="list__grid__item">
+			<div class="list__grid__number">
+				<h6>04 - </h6>
+			</div>
+			<div class="list__grid__title">
+				<h3>Direct Funding & Real-time Tracking</h3>
+				<p>Instantaneous funding and full graphical tracking so you never miss a beat.</p>
+			</div>
+			<div class="arrow"></div>
+			<div class="list__grid__line"></div>
+		</a>
+    <a href="{{ url_for('MCA_how_it_works', _anchor='service-5') }}" class="list__grid__item">
+<div class="list__grid__number">
+  <h6>04 - </h6>
+</div>
+<div class="list__grid__title">
+  <h3>Portals for ISOs, Syndicators, and Merchants</h3>
+  <p>Relevant data routing and partitioning so that all your people are in the loop for what matters.</p>
+</div>
+<div class="arrow"></div>
+<div class="list__grid__line"></div>
+</a>
+				</div>
+</section>
+
+
+
+
+
+		<section id="cta" class="cta">
+		<div class="cta__sticky">
+			<div class="cta__top background--light">
+				<div class="content">
+					<div class="cta__contact">
+						<div class="cta__person">
+							<div class="cta__person__image">
+								<img width="500" height="500" src="../#" class="attachment-full size-full lazyload"  data-src="../static/images/helpful_logo_dark.png"/>							</div>
+							<div class="cta__person__contact">
+								<div class="cta__person__name">
+									Active_MCA							</div>
+								<div class="cta__person__function">
+									MCA <br>Re-invented								</div>
+							</div>
+						</div>
+						<div class="cta__text">
+							<h3>
+								A premium MCA management software that is ACTIVE and responsive to your daily funding system.							</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cta__bottom background--dark">
+				<div class="content cta__links">
+					<div class="cta__items">
+
+
+						<a href="{{ url_for('MCA_how_it_works') }}" class="cta__link">
+<span class="cta__link__title">
+How It Works</span>
+<span class="link">
+Easy, Simple, Fast							</span>
+</a>
+
+
+<a href="{{ url_for('MCA_Security') }}" class="cta__link">
+<span class="cta__link__title">
+Security</span>
+<span class="link">
+Impenetrable Data Shielding 						</span>
+</a>
+
+
+<a href="{{ url_for('MCA_Public_Contact') }}" class="cta__link">
+<span class="cta__link__title">
+Contact</span>
+<span class="link">
+Get in Touch 							</span>
+</a>
+																	</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+            <footer class="background--black">
+               <div class="content">
+                  <div class="footer">
+                     <div class="footer__company">
+                        <h5>Active MCA</h5>
+                        Constantly Working.
+                     </div>
+                     <div class="footer__office">
+                        <h5>Locations</h5>
+                        New York, NY<br />
+                        Charleston, SC
+                     </div>
+                     <div class="footer__contact">
+                        <h5>General Contact</h5>
+                        <a href="../mailto:info@activemca.com">info@activemca.com</a>
+                     </div>
+                     <div class="footer__careers">
+                        <h5>Emergency Contact</h5>
+                        <a href="../tel:xxx-xxx-xxxx">xxx-xxx-xxxx</a>
+                     </div>
+                     <div class="footer__copyright">
+                        Copyright © Active MCA 2020
+                     </div>
+                     <div class="footer__privacy">
+                        <a href="../terms-and-conditions/index.html">Terms &amp; Conditions</a>
+                     </div>
+                     <div class="footer__terms">
+                     </div>
+                     <div class="footer__languages">
+                     </div>
+                     <button class="footer__up" onclick="window.scrollToTop()">
+                     <span class="arrow footer__up__arrow"></span>
+                     <span class="footer__up__text">Started from the bottom — now...</span>
+                     </button>
+                  </div>
+               </div>
+            </footer>
+</div>
+</div>
+      <script defer="defer" src="../static/js/jquery-3.5.1.min9d52.js?ver=3.5.1"></script>
+      <script defer="defer" src="../static/js/flickity.pkgd.min3601.js?ver=2.2.0"></script>
+      <script defer="defer" src="../static/js/jquery.scrollTo.min431f.js?ver=2.1.2"></script>
+      <script defer="defer" src="../static/js/jquery.localScroll.min001e.js?ver=2.0.0"></script>
+      <script defer="defer" src="../static/js/jquery.easing.min330a.js?ver=1.4.1"></script>
+      <script defer="defer" src="../static/js/modernizr-touchaf6c.js?ver=3.6.0"></script>
+      <script defer="defer" src="../static/js/select2.minf39e.js?ver=4.0.1"></script>
+      <script defer="defer" src="../static/js/mixitup.min3d36.js?ver=3.3.1"></script>
+      <script defer="defer" src="../static/js/mixitup-multifilter.min7984.js?ver=3.3.4"></script>
+      <script defer="defer" src="../static/js/player.min0ad8.js?ver=2.10.0"></script>
+      <script defer="defer" src="../static/js/lazysizes.minf08a.js?ver=5.2.0"></script>
+      <script defer="defer" src="../static/js/init-distedb9.js?ver=1594221671"></script>
+
+</body>
+
+
+</html>
+
+<!-- Dynamic page generated in 0.739 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2020-08-17 12:51:34 -->
+
+<!-- super cache -->

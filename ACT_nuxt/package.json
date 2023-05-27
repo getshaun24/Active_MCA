@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^9.9.0",
+    "@vueuse/nuxt": "^9.9.0",
+    "nuxt": "3.0.0",
+    "pinia": "^2.0.29",
+    "webpack": "^5.75.0"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.6",
+    "@vueuse/integrations": "^9.13.0",
+    "esbuild": "^0.17.7",
+    "gsap": "file:gsap-bonus.tgz",
+    "plaid": "^12.3.0",
+    "swiper": "^8.4.5",
+    "universal-cookie": "^4.0.4",
+    "vue-ellipse-progress": "^2.1.1"
+  },
+  "engines": {
+    "node": "16.19.0",
+    "npm": "9.1.3"
+  }
+}

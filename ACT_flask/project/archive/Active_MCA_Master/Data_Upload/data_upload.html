@@ -1,0 +1,227 @@
+
+
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html lang="en-US">
+
+   <!-- Added by HTTrack -->
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <!-- /Added by HTTrack -->
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="../../images/helpful_logo_1.png" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="../../static/css/form.css" >
+      <link rel='dns-prefetch' href='../../index.html' />
+      <link rel='dns-prefetch' href='http://s.w.org/' />
+      <link rel='stylesheet' id='style-css'  href='../../static/css/style6fd2.css' type='text/css' media='all' />
+      <link rel="shortcut icon" href="../../static/images/helpful_logo_1.png" />
+   </head>
+   <body class="">
+      <div id="container">
+      <div class="preloadContainer ">
+         <div class="topbar ">
+            <div class="content">
+               <div class="topbar__inner">
+                  <a href="{{ url_for('MCA_homepage') }}" class="logo" title="ActiveMCA">
+                     <img src="../../static/images/helpful_logo_dark.png" style="width:150px; height:auto; margin-top:-5%; margin-left:-17%"> </img>
+                     <p class=logo-text></p>
+                  </a>
+                  <div class="tagline"></div>
+                  <button class="menubtn">
+                     <span class="menubtn__title">Menu</span>
+                     <div class="menubtn__icon">
+                        <span class="icon-first"></span>
+                        <span class="icon-second"></span>
+                        <span class="icon-third"></span>
+                     </div>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <div class="drawer">
+            <div class="content">
+               <div class="drawer__container">
+                  <div class="drawer__inner">
+                     <div class="drawer__menu">
+                        {% if access_status == 'admin' %}
+                        <nav class="menu-menu-container">
+                        <ul style="margin-left:-10%" id="menu-menu" class="menu grid">
+                           <div>
+                              <li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="{{ url_for('MCA_homepage') }}">Home</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_client_manager') }}">Advances</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_merchants') }}">Merchants</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_ISOs') }}">ISOs</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_syndicators') }}">Syndicators</a><sup></sup></li>
+                           </div>
+                           <div>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_all_transactions') }}">Transactions</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_employee_stats') }}">Sales</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_user_settings') }}">Manage Users</a><sup></sup></li>
+                              <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_security') }}">Security</a><sup></sup></li>
+                              <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="{{ url_for('MCA_contact') }}">Contact</a><sup></sup></li>
+                           </div>
+                           {% else %}
+                           <nav class="menu-menu-container">
+                              <ul id="menu-menu" class="menu">
+                                 <li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="{{ url_for('MCA_homepage') }}">Home</a><sup></sup></li>
+                                 <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_client_manager') }}">Advances</a><sup></sup></li>
+                                 <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_merchants') }}">Merchants</a><sup></sup></li>
+                                 <li id="menu-item-427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="{{ url_for('MCA_security') }}">Security</a><sup></sup></li>
+                                 <li id="menu-item-429" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-429"><a href="{{ url_for('MCA_contact') }}">Contact</a><sup></sup></li>
+                                 {% endif %}
+                              </ul>
+                           </nav>
+                        </ul>
+                     </div>
+                     <div class="drawer__bottom">
+                        <div class="drawer__contact">
+                           <h5>General contact</h5>
+                           <a href="">info@activemca.com</a>
+                        </div>
+                        <div class="drawer__language">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <style>
+            @media screen and (min-width:50px) and (max-width:500px) {
+            .service_sphere{
+            width:70% !important;
+            margin-top:-35% !important;
+            margin-left:20% !important
+            }
+            .services_margin{
+            margin-left:0% !important;
+            margin-top:20% !important
+            }
+            }
+            @media screen and (min-width:501px) and (max-width:770px) {
+            .service_sphere{
+            width:70% !important;
+            margin-top:-25% !important;
+            margin-left:20% !important
+            }
+            .services_margin{
+            margin-left:0% !important;
+            margin-top:20% !important
+            }
+            }
+            @media screen and (min-width:771px) and (max-width:900px) {
+            .service_sphere{
+            width:60% !important;
+            margin-top:-20% !important;
+            margin-left:23% !important
+            }
+            .services_margin{
+            margin-left:-15% !important;
+            margin-top:25% !important
+            }
+            }
+            @media screen and (min-width:901px) and (max-width:1200px) {
+            .service_sphere{
+            width:60% !important;
+            margin-top:-20% !important;
+            margin-left:22% !important
+            }
+            .services_margin{
+            margin-left:-20% !important;
+            margin-top:15% !important
+            }
+            }
+            @media screen and (min-width:1201px) and (max-width:3000px) {
+            .service_sphere{
+            width:60% !important;
+            margin-top:-27% !important;
+            margin-left:27% !important
+            }
+            .services_margin{
+            margin-left:-20% !important;
+            }
+            }
+         </style>
+         <div id="body" class="services">
+            <section id="hero" class="background--black" style="margin-top:20%">
+               <div class="content hero__grid services_margin" style="z-index:1; position:relative;">
+                  <div class="hero__headline">
+                     <h1>Log In<span class="subtitle"></span></h1>
+                  </div>
+               </div>
+            </section>
+            <section class="service background--light">
+               <div class="content" style="min-height:80vh">
+                  <div class="form-container" style="width:50%">
+                     <h1>Upload your CSV file</h1>
+                     <form method="POST" action="" enctype="multipart/form-data">
+                        <br><br>
+                        <p>Company ID</p>
+                        <p><input type="text" name="company_ID" required></p>
+                        <p>Contract Count </p>
+                        <p><input type="text" name="contract_count" required></p>
+                        <br><br>
+                        <p><input type="file" name="file"></p>
+                        <br><br>
+                        <p><input type="submit" value="Submit"></p>
+                     </form>
+                  </div>
+            </section>
+            </div>
+            <footer class="background--black">
+               <div class="content">
+                  <div class="footer">
+                     <div class="footer__company">
+                        <h5>Active MCA</h5>
+                        Constantly Working.
+                     </div>
+                     <div class="footer__office">
+                        <h5>Locations</h5>
+                        New York, NY<br />
+                        Charleston, SC
+                     </div>
+                     <div class="footer__contact">
+                        <h5>General Contact</h5>
+                        <a href="mailto:info@activemca.com">info@activemca.com</a>
+                     </div>
+                     <div class="footer__careers">
+                        <h5>Emergency Contact</h5>
+                        <a href="tel:404-513-3348">404-513-3348</a>
+                     </div>
+                     <div class="footer__copyright">
+                        Copyright © Active MCA 2020
+                     </div>
+                     <div class="footer__privacy">
+                        <a href="terms-and-conditions/index.html">Terms &amp; Conditions</a>
+                     </div>
+                     <div class="footer__terms">
+                     </div>
+                     <div class="footer__languages">
+                     </div>
+                     <button class="footer__up" onclick="window.scrollToTop()">
+                     <span class="arrow footer__up__arrow"></span>
+                     <span class="footer__up__text">Started from the bottom — now...</span>
+                     </button>
+                  </div>
+               </div>
+            </footer>
+         </div>
+      </div>
+      <script defer="defer" src="../../static/js/jquery-3.5.1.min9d52.js?ver=3.5.1"></script>
+      <script defer="defer" src="../../static/js/flickity.pkgd.min3601.js?ver=2.2.0"></script>
+      <script defer="defer" src="../../static/js/jquery.scrollTo.min431f.js?ver=2.1.2"></script>
+      <script defer="defer" src="../../static/js/jquery.localScroll.min001e.js?ver=2.0.0"></script>
+      <script defer="defer" src="../../static/js/jquery.easing.min330a.js?ver=1.4.1"></script>
+      <script defer="defer" src="../../static/js/modernizr-touchaf6c.js?ver=3.6.0"></script>
+      <script defer="defer" src="../../static/js/libs/select2.minf39e.js?ver=4.0.1"></script>
+      <script defer="defer" src="../../static/js/mixitup.min3d36.js?ver=3.3.1"></script>
+      <script defer="defer" src="../../static/js/mixitup-multifilter.min7984.js?ver=3.3.4"></script>
+      <script defer="defer" src="../../static/js/player.min0ad8.js?ver=2.10.0"></script>
+      <script defer="defer" src="../../static/js/lazysizes.minf08a.js?ver=5.2.0"></script>
+    
+      <script defer="defer" src="../../static/js/init-distedb9.js?ver=1594221671"></script>
+   </body>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1 style="width:20%; margin-left:40%; margin-top:25%" id='plaidToken'></h1>
+</body>
+
+
+<!-- Include the Plaid Link initialize script on each page of your site. -->
+<!-- It should always be loaded directly from https://cdn.plaid.com, rather -->
+<!-- than included in a bundle or hosted yourself. -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <script type="text/javascript">
+
+
+
+
+
+    (async function($) {
+      var handler = Plaid.create({
+        // Create a new link_token to initialize Link
+
+        token: '{{ link_token }}',
+        //token: link_token_active,
+        // Can/should probably use this redirect once we have a HTTP address to send it to - plaid says it wont redirect to a server
+        //receivedRedirectUri: window.location.href,
+
+
+        onLoad: function() {
+          // Optional, called when Link loads
+        },
+        onSuccess: function(public_token, metadata) {
+          // Send the public_token to your app server.
+          // The metadata object contains info about the institution the
+          // user selected and the account ID or IDs, if the
+          // Account Select view is enabled.
+
+
+          document.getElementById('plaidToken').innerHTML = "<div class='loader'></div> "; // starts the laod wheel
+
+
+
+          // variables from the url to represent the merchant
+          // var dwolla_id = {dwolla_id:"{{dwolla_id}}"}
+          // var company_ID = {company_ID:"{{company_ID}}"}
+          // var pub_toke = {pub_toke:public_token}
+          // var meta_d = {meta_d:metadata}
+          // put all the relevant info into a dict and send back to the server
+          // all_exchange = {public_token, metadata, dwolla_id, company_ID}
+          all_exchange = {public_token, metadata}
+
+          // code to send dict to server
+          $.ajax({
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            url: "/Merchant/Secure_Bank/Plaid_Confirm/?did={{did}}&mid={{mid}}&fid={{fid}}&link_token{{link_token}}&is_live_production_env{{is_live_production_env}}",
+            //url: "/Merchant/Secure_Bank/Secure_Account_Select/",
+            traditional: "true",
+            data: JSON.stringify(all_exchange),
+            dataType: "json"
+          });
+
+
+
+          // $.post('/Merchant/Secure_Bank/Plaid_Confirm/?did={{did}}&mid={{mid}}&fid={{fid}}&link_token{{link_token}}', {
+          //   public_token: public_token,
+          //   metadata: metadata
+          //   // dwolla_id: "{{dwolla_id}}",
+          //   // company_ID: "{{company_ID}}"
+          // });
+
+          // Can/should probably put this in the plaid redirect when on a live server with HTTP
+          // make the window wait 8 seconds for the plaid data to process on the server before continuing
+          setTimeout(function () {
+
+            var is_live_production_env = String("{{is_live_production_env}}")
+            if (is_live_production_env == "True"){
+                window.location.replace("https://www.activemca.com/Merchant/Secure_Bank/Secure_Account_Select/?did=" + "{{did}}" + "&mid=" + "{{mid}}" + "&fid=" + "{{fid}}");
+            }
+            else{
+                window.location.replace("http://127.0.0.1:5000/Merchant/Secure_Bank/Secure_Account_Select/?did=" + "{{did}}" + "&mid=" + "{{mid}}" + "&fid=" + "{{fid}}");
+            };
+          //       close();
+          }, 5);
+
+
+
+        },
+        onExit: function(err, metadata) {
+          // The user exited the Link flow.
+
+          if (err != null) {
+            // The user encountered a Plaid API error prior to exiting.
+          }
+          // metadata contains information about the institution
+          // that the user selected and the most recent API request IDs.
+          // Storing this information can be helpful for support.
+        },
+        onEvent: function(eventName, metadata) {
+          // Optionally capture Link flow events, streamed through
+          // this callback as your users connect an Item to Plaid.
+          // For example:
+          // eventName = "TRANSITION_VIEW"
+          // metadata  = {
+          //   link_session_id: "123-abc",
+          //   mfa_type:        "questions",
+          //   timestamp:       "2017-09-14T14:42:19.350Z",
+          //   view_name:       "MFA",
+          // }
+        }
+      });
+
+
+      // Calling open() will display the "Institution Select" view to your user,
+      // starting the Link flow.
+
+      handler.open();
+
+    })(jQuery);
+
+
+    </script>
+
+
+
+
+
+
+    <style>
+        .loader {
+      border: 16px solid #f3f3f3; /* Light grey */
+      border-top: 16px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+    </html>
+
+
+
+<!-- Old Plaid Link JS Code
+
+
+
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        const handler = Plaid.create({
+            clientName: 'Shaun Money',
+            // Set env to the "sandbox" environment for sandbox apps,
+            // and the "production" environment for production apps.
+            env: 'sandbox',
+            // Sila provides you with a Plaid Link Public Key to incorporate
+            // Plaid Auth, Balance, and Identity products in your application.
+            // Use for all environments (sandbox, development and production).
+            token: '{{ link_token }}',
+            // Use the "auth" product from Plaid.
+            product: ['auth'],
+            // The only account types we currently support linking is  "CHECKING" or "SAVINGS" accounts.
+
+            // The onSuccess() function of the Plaid plugin will return a public
+            // token and metadata object to your code. Please use our API to send
+            // us the public token, and we will query the routing number and account
+            // number of the bank account from Plaid and store it securely on our systems.
+            onSuccess: (public_token, metadata) => {
+                document.getElementById('plaidToken').innerHTML = "<div class='loader'></div> "; // starts the laod wheel
+
+            // variables from the url to represent the merchant
+            var dwolla_id = {dwolla_id:"{{dwolla_id}}"}
+            var company_ID = {company_ID:"{{company_ID}}"}
+            // put all the relevant info into a dict and send back to the server
+          all_exchange = {public_token, metadata, dwolla_id, company_ID}
+
+          // code to send dict to server
+                $.ajax({
+          type: "POST",
+          contentType: "application/json;charset=utf-8",
+          // url: "/Merchant/Secure_Bank/Plaid_Confirm/",
+          url: "/Merchant/Secure_Bank/Secure_Account_Select/",
+          traditional: "true",
+          data: JSON.stringify(all_exchange),
+          dataType: "json"
+          });
+
+          // make the window wait 8 seconds for the plaid data to process on the server before continuing
+          setTimeout(function () {
+      //       close();
+          //      window.location.replace("https://www.activemca.com/Merchant/Secure_Bank/Secure_Account_Select/?secure_var=" + "{{dwolla_id}}" + "___" + "{{company_ID}}");
+          window.location.replace("http://127.0.0.1:5000/Merchant/Secure_Bank/Secure_Account_Select/?secure_var=" + "{{dwolla_id}}" + "___" + "{{company_ID}}");
+        }, 8000);
+
+
+            }
+        });
+
+        // Calling open() will display the "Institution Select" view to your user,
+        // starting the Link flow.
+
+        handler.open();
+
+        -->
