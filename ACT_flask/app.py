@@ -1,11 +1,6 @@
-from project import create_app
-
-
-if __name__ == '__main__':
-
-    app = create_app()
-  
-    app.run()
+from project.__init__ import app
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
 
 
 # import requests
