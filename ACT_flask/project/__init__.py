@@ -61,7 +61,7 @@ global mongo
 mongo = MongoSingleton().client
 app.db = mongo
 global db
-db = mongo[app.config['MONGO_DB']]
+db = mongo
 
 
 jwt = JWTManager(app)
@@ -81,7 +81,7 @@ def user_identity_lookup(user):
 @jwt.user_lookup_loader
 def user_lookup_callback(_jwt_header, jwt_data):
 	identity = jwt_data["sub"]
-	return User(identity, mongo)
+	return User(identity, db)
 
 
 # Using an `after_request` callback, we refresh any token that is within 30
@@ -122,13 +122,12 @@ if form_data['logout'] == 'logout':
 	return redirect(url_for('/logout'))
 
 """
-# @app.route('/logout', methods=['GET', 'POST'])
-# @login_required
-# def logout():
-# 	close_mongo_db()
-# 	logout_user()
-# 	session.clear()
-# 	return redirect(url_for('MCA_Public_Homepage'))
+@app.route('/api/logout/', methods=['GET', 'POST'])
+@jwt_required()
+def logout():
+	response = jsonify({"msg": "logout successful"})
+	unset_jwt_cookies(response)
+	return response
 
 
 # Clearcheck is Obsolete  ---- Will be Lexis Nexis Soon
@@ -161,9 +160,10 @@ if form_data['logout'] == 'logout':
 # ------------------------------- TEARDOWN APP CONTEXT ----------------------------------------->
 # This is executed using the teardown_appcontext signal 
 
-# @app.teardown_appcontext
-# def teardown_db(exception):
-# 	close_mongo_db()
+@app.teardown_appcontext
+def teardown_db(exception):
+	mongo.close()
+	db.close()
 
 
 

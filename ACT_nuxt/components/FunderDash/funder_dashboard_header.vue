@@ -93,11 +93,11 @@
 <script setup>
 import { onClickOutside } from '@vueuse/core'
 const config = useRuntimeConfig()
-const csrf_cookie = useCookie('csrf_access_token')
 const props = defineProps(['is_active'])
 const dropdown_visible = ref(false);
 const profile_drop = ref(null)
 const notification_count = useCookie('notification_count')
+const csrf_cookie = useCookie('csrf_access_token')
 
     onClickOutside(profile_drop, (event) => {
     if(dropdown_visible.value == true) {
@@ -119,33 +119,36 @@ function transition_and_route(route_to) {
 }
 
 
-const user_ID = useCookie('user_ID')
-const rocket_chat_auth_token = useCookie('rocket_chat_auth_token')
+// const user_ID = useCookie('user_ID')
+// const rocket_chat_auth_token = useCookie('rocket_chat_auth_token')
 function logout() {
-
-  fetch(`${config.flask_url}/api/rocket_chat/rocket_chat_logout/`, {
-      method: 'POST',
+  fetch(`${config.flask_url}/api/logout/`, {
+      method: 'post',
+      mode: 'cors',
+      credentials: 'include',
       headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': csrf_cookie.value
       },
-      body: JSON.stringify({user_ID: user_ID.value, rocket_chat_auth_token:rocket_chat_auth_token.value})
+      // body: JSON.stringify({user_ID: user_ID.value, rocket_chat_auth_token:rocket_chat_auth_token.value})
+      body: JSON.stringify({"msg": "logout"})
   })
   .then((response) => response.json())
   .then((data) => {
-    alert('Success')
+    const auth_cookie = useCookie('auth_cookie')
+    auth_cookie.value = null
+    csrf_cookie.value = null
+    const access_cookie = useCookie('access_token_cookie')
+    access_cookie.value = null
+    const first_name_cookie = useCookie('first_name')
+    first_name_cookie.value = null
+    transition_and_route('/login_pages/login')
+    // alert('Success')
   })
   .catch(error => {
       alert('Error')
   });
-
-  const auth_cookie = useCookie('auth_cookie')
-  auth_cookie.value = null
-  const csrf_cookie = useCookie('csrf_access_token')
-  csrf_cookie.value = null
-  const access_cookie = useCookie('access_token_cookie')
-  access_cookie.value = null
-  transition_and_route('/login_pages/login')
 }
 
 

@@ -16,7 +16,7 @@ from flask_jwt_extended import current_user
 
 Funder_Home_Blueprint = Blueprint('MCA_Funder_Home', __name__)
 @Funder_Home_Blueprint.route('/api/funder/funder_home/', methods=['GET', 'POST']) # <- from '/'
-@jwt_required
+@jwt_required()
 def MCA_Funder_Home():
 
     if current_user.access_status != 'admin':

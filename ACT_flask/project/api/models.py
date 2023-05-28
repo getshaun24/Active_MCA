@@ -9,9 +9,9 @@ from datetime import datetime
 class User(UserMixin):
 	# All users would have the below properties
 	def __init__(self, email, db):
-		userData = db.Credentials.Users.find_one({ "email": email },{"notifications":False})
+		userData = db.Credentials.Users.find_one({ "email": email })
 		if userData is not None:
-			self.id = userData['_id']
+			self.id = userData['email']
 			self.email = userData['email']
 			self.access_status = userData['access_status']
 			self.password = userData['password']
@@ -20,7 +20,8 @@ class User(UserMixin):
 			self.last_name = userData['last_name']
 			self.notification_count = userData['notification_count']
 			if self.access_status != "master":
-				self.business_id = userData['business_id']
+				# self.business_id = userData['business_id']
+				pass
 			if self.access_status == "admin":
 				self.user_database = userData["metadata"]["funder_db"]
 			if self.access_status == "syndicator" or self.access_status == "merchant":

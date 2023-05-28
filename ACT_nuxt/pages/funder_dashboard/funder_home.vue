@@ -114,7 +114,7 @@ const more_info = useCookie('more_info', cookie_options)
 
 
   
-  fetch(`${config.flask_url}/api/user_dashboard/dashboard_home/`, {
+  fetch(`${config.flask_url}/api/funder/funder_home/`, {
       method: 'post',
       mode: 'cors',
       credentials: 'include',

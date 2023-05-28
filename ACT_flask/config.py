@@ -2,7 +2,7 @@ class Config(object):
     """Base config, uses staging database server."""
 
     # Mongo config
-    MONGO_CLI='mongodb+srv://Gr33nworldwid31:Gr33nworldwid31@activemca-1.ugg7j.mongodb.net'
+    MONGO_CLI='mongodb+srv://Gr33nworldwid31:Gr33nworldwid31@activemca-1.ugg7j.mongodb.net/'
     MONGO_DB='Active_MCA'
 
     # Mail server config

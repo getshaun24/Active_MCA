@@ -189,7 +189,8 @@
       if (!response.ok) {
         const error = (data.msg) || response.status
         if (response.status == 401) {
-          navigateTo('/login_pages/login')
+          alert(data.msg)
+          // navigateTo('/login_pages/login')
         }
         return Promise.reject(error)
       }
@@ -199,10 +200,10 @@
         cookie.value = new Date().getTime()+30*60*1000
         message_hidden.value = true
         modal_leave()
-        if (data.access_status == "investor") {
-          transition_and_route('/investor_dashboard/investor_home')
+        if (data.access_status == "admin") {
+          navigateTo('/funder_dashboard/funder_home')
         } else {
-          transition_and_route('/index')
+          transition_and_route('/login_pages/login')
         }
       }
       // const { session, refresh, update, reset } = await useSession()

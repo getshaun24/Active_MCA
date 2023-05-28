@@ -21,9 +21,9 @@ def MCA_Login():
     # Here we do some code to make sure the username and password is correct.
     user = User(email, db)
     if user.id is None:
-        return jsonify("Account not registered"), 401
+        return jsonify(msg="Account not registered"), 401
     if not user.check_password(password):
-        return jsonify("Wrong username or password"), 401
+        return jsonify(msg="Incorrect password"), 401
 
     # Set access token. 
     two_factor_code = '111'
@@ -41,12 +41,13 @@ def MCA_Login():
         subject="GET - 2 Factor Code",
         body="Please Use The Following Code: \n \n " + str(two_factor_code)
     )
-    mail.send(msg)
+    # mail.send(msg)
 
     # Set cookies so that we have an identity to check the two factor code for in the next step.
-    access_token = create_access_token(identity=user)
-    set_access_cookies(response, access_token)
+    # access_token = create_access_token(identity=user)
+    response = jsonify({"msg": "Credentials are good"})
+    # set_access_cookies(response, access_token)
 
     # Return message and redirect to MFA page.
-    response = jsonify({"msg": "Please check email for MFA code."})
+    
     return response, 201
