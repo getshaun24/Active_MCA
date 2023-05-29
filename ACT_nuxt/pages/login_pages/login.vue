@@ -200,7 +200,9 @@
         cookie.value = new Date().getTime()+30*60*1000
         message_hidden.value = true
         modal_leave()
-        if (data.access_status == "admin") {
+        if (data.access_status == "master") {
+          navigateTo('/master_dashboard/master_home')}
+        else if (data.access_status == "admin") {
           navigateTo('/funder_dashboard/funder_home')
         } else {
           transition_and_route('/login_pages/login')
