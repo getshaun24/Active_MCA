@@ -1235,5 +1235,54 @@ search_bar_table_max_width.value = '400px'
     
     
 } 
+
+
+
+
+/* 
+
+.table {
+    background-color: var(--table-background) !important;
+}
+
+.table_title{
+    color:var(--theme-txt-color) !important;
+}
+
+.navigation_menu_table_item {
+    color: var(--table-sorter-color) !important;
+}
+.navigation_menu_table_item:hover {
+    color: var(--table-sorter-color-hover) !important;
+}
+
+.counter {
+    color:var(--theme-txt-color) !important;
+}
+
+.title_row{
+    border: var(--table-header-row-background) 2px solid !important;
+    color:var(--theme-txt-color) !important;
+    background-color:var(--table-header-row-background) !important;
+}
+
+.table_row {
+    color: var(--theme-color) !important;
+}
+
+.search_bar_table input::-moz-placeholder {
+    color: var(--inactive-color) !important;
+}
+.search_bar_table input:-ms-input-placeholder {
+    color: var(--inactive-color) !important;
+}
+.search_bar_table input::placeholder {
+    color: var(--inactive-color) !important;
+}
+
+.wide .search_bar_table {
+    box-shadow: 0 0 0 1px var(--border-color) !important;
+} */
+
 </style>
 
