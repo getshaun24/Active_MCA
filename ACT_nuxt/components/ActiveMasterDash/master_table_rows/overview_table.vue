@@ -175,11 +175,12 @@ td{
     align-items: left;
     flex-direction:row;
     justify-content: space-evenly;
+    color: #215cda;
 }
 
 .table_row:hover {
     background-color:#8ccdff0d;
-    color: #215cda 
+    color: #215cda;
 }
 
 
