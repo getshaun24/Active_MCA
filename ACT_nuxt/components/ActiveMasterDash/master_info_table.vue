@@ -50,8 +50,9 @@
                 <!-- </span> -->
                 <tfoot style="border-radius:100px">
                     <tr>
-                        <td v-if="show_amount < record_count" class="table_footer_info">Showing {{ show_amount }} items out of {{ record_count }} results found</td>
-                        <td v-else class="table_footer_info">Showing {{ record_count }} items out of {{ record_count }} results found</td>
+                        <!-- <td v-if="props.show_amount.value === 1" class="table_footer_info">TEST: Showing {{ show_amount }} item out of {{ record_count }} result found</td> -->
+                        <td v-if="show_amount < record_count" class="table_footer_info">TEST 2: Showing {{ show_amount }} item out of {{ record_count }} results found</td>
+                        <td v-else class="table_footer_info">TEST 3: Showing {{ record_count }} item(s) out of {{ record_count }} results found</td>
                     </tr>
                 </tfoot>
             </table>
@@ -214,7 +215,7 @@ search_bar_table_max_width.value = '400px'
 .container_table {
     margin-right: auto;
     overflow:hidden;
-    padding-top:20%;
+    padding-top:0%;
     padding-bottom:15vh;
     width:100%
 }
